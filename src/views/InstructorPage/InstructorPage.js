@@ -38,12 +38,28 @@ import styles from "assets/jss/material-kit-pro-react/views/ecommerceStyle.js";
 const useStyles = makeStyles(styles);
 
 export default function EcommercePage() {
+
+  const [instructors, setInstructors] = React.useState("");
+
+  const fetchInstructors = () => {
+    const url = "http://localhost:3000/instructors/";
+    fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(res => res.json())
+      .then(data => setInstructors(data))
+      .catch(err => console.log(err))
+
+  }
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
+    fetchInstructors();
   });
   const classes = useStyles();
-  
+
   return (
     <div>
       <Header
@@ -85,9 +101,9 @@ export default function EcommercePage() {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-      <SectionBlog />
+        <SectionBlog />
       </div>
-      
+
       <div
         className={classNames(
           classes.subscribeLine,
