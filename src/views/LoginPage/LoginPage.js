@@ -29,10 +29,42 @@ import image from "assets/img/bg7.jpg";
 const useStyles = makeStyles(loginPageStyle);
 
 export default function LoginPage() {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   });
+
+  const handleLogin = e => {
+    console.log(email);
+    console.log(password);
+
+    let url = "http://localhost:3000/users/login";
+    let user = {
+      email:email,
+      password: password
+    }
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+          // Authorization: "Bearer " + token
+      },
+      body: JSON.stringify(user)
+  })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        let token = data.token
+        localStorage.setItem("token", token)
+      })
+      .catch(error => console.log(error))
+
+  }
+
+
   const classes = useStyles();
   return (
     <div>
@@ -93,26 +125,12 @@ export default function LoginPage() {
                   </p>
                   <CardBody signup>
                     <CustomInput
-                      id="first"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        placeholder: "First Name...",
-                        type: "text",
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <Face className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                    <CustomInput
                       id="email"
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
+                        onChange: e => setEmail(e.target.value),
                         placeholder: "Email...",
                         type: "email",
                         startAdornment: (
@@ -128,6 +146,7 @@ export default function LoginPage() {
                         fullWidth: true
                       }}
                       inputProps={{
+                        onChange: e => setPassword(e.target.value),
                         placeholder: "Password",
                         type: "password",
                         startAdornment: (
@@ -142,7 +161,8 @@ export default function LoginPage() {
                     />
                   </CardBody>
                   <div className={classes.textCenter}>
-                    <Button simple color="primary" size="lg">
+                    <Button simple color="primary" size="lg" 
+                     onClick={() => handleLogin()}>
                       Get started
                     </Button>
                   </div>

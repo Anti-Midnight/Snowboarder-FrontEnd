@@ -36,6 +36,9 @@ const useStyles = makeStyles(signupPageStyle);
 
 export default function SignUpPage({ ...rest }) {
   const [checked, setChecked] = React.useState([1]);
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const handleToggle = value => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -47,10 +50,41 @@ export default function SignUpPage({ ...rest }) {
     setChecked(newChecked);
   };
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
+    // window.scrollTo(0, 0);
+    // document.body.scrollTop = 0;
   });
   const classes = useStyles();
+
+  const handleSubmit = e => {
+    //e.preventDefault();
+    console.log(name);
+    console.log(email);
+    console.log(password);
+    
+    let url = "http://localhost:3000/users/";
+    let user = {
+      name:name,
+      email:email,
+      password: password
+    }
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+          // Authorization: "Bearer " + token
+      },
+      body: JSON.stringify(user)
+  })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data.token)
+          let token = data.token
+          localStorage.setItem("token", token)
+      })
+      .catch(error => console.log(error))
+
+  }
   return (
     <div>
       <Header
@@ -116,13 +150,15 @@ export default function SignUpPage({ ...rest }) {
                         {` `}
                         <h4 className={classes.socialTitle}>or be classical</h4>
                       </div>
-                      <form className={classes.form}>
+                    
+                      <form onSubmit={handleSubmit} className={classes.form}>
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
                             className: classes.customFormControlClasses
                           }}
                           inputProps={{
+                            onChange: e => setName(e.target.value),
                             startAdornment: (
                               <InputAdornment
                                 position="start"
@@ -140,6 +176,7 @@ export default function SignUpPage({ ...rest }) {
                             className: classes.customFormControlClasses
                           }}
                           inputProps={{
+                            onChange: e => setEmail(e.target.value),
                             startAdornment: (
                               <InputAdornment
                                 position="start"
@@ -157,6 +194,7 @@ export default function SignUpPage({ ...rest }) {
                             className: classes.customFormControlClasses
                           }}
                           inputProps={{
+                            onChange: e => setPassword(e.target.value),
                             startAdornment: (
                               <InputAdornment
                                 position="start"
@@ -197,7 +235,7 @@ export default function SignUpPage({ ...rest }) {
                           }
                         />
                         <div className={classes.textCenter}>
-                          <Button round color="primary">
+                          <Button round color="primary" onClick={() => handleSubmit()}>
                             Get started
                           </Button>
                         </div>
