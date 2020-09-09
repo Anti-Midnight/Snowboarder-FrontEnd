@@ -1,6 +1,8 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -18,105 +20,50 @@ import styles from "assets/jss/material-kit-pro-react/views/ecommerceSections/bl
 
 const useStyles = makeStyles(styles);
 
-export default function SectionBlog() {
+export default function SectionInstructors(props) {
   const classes = useStyles();
+  const { instructors } = props;
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <h2 className={classes.sectionTitle}>Latest Articles</h2>
         <GridContainer>
-          <GridItem md={4} sm={4}>
-            <Card blog>
-              <CardHeader image>
-                <a href="#pablo">
-                  <img src={dg6} alt="..." />
-                </a>
-                <div
-                  className={classes.coloredShadow}
-                  style={{ backgroundImage: `url(${dg6})`, opacity: 1 }}
-                />
-              </CardHeader>
-              <CardBody>
-                <h6
-                  className={classNames(classes.cardCategory, classes.textRose)}
-                >
-                  Trends
-                </h6>
-                <h4 className={classes.cardTitle}>
+          {instructors.map((instructor) => (
+            <GridItem md={4} sm={4}>
+              <Card blog>
+                <CardHeader image>
                   <a href="#pablo">
-                    Learn how to wear your scarf with a floral print shirt
+                    <img src={instructor.imgURL} alt="..." />
                   </a>
-                </h4>
-                <p className={classes.cardDescription}>
-                  Don{"'"}t be scared of the truth because we need to restart
-                  the human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
-                </p>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem md={4} sm={4}>
-            <Card blog>
-              <CardHeader image>
-                <a href="#pablo">
-                  <img src={dg10} alt="..." />
-                </a>
-                <div
-                  className={classes.coloredShadow}
-                  style={{ backgroundImage: `url(${dg10})`, opacity: 1 }}
-                />
-              </CardHeader>
-              <CardBody>
-                <h6
-                  className={classNames(classes.cardCategory, classes.textRose)}
-                >
-                  Fashion Week
-                </h6>
-                <h4 className={classes.cardTitle}>
-                  <a href="#pablo">
-                    Katy Perry was wearing a Dolce & Gabanna arc dress
+                  <div
+                    className={classes.coloredShadow}
+                    style={{ backgroundImage: `url(${instructor.imgURL})`, opacity: 1 }}
+                  />
+                </CardHeader>
+                <CardBody>
+                  <h3
+                    className={classNames(classes.cardCategory, classes.textRose)}
+                  >
+                    {instructor.name}
+                  </h3>
+                  <h4 className={classes.cardTitle}>
+                    <a href="#pablo">
+                    {instructor.description}
                   </a>
-                </h4>
-                <p className={classes.cardDescription}>
-                  Don{"'"}t be scared of the truth because we need to restart
-                  the human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
-                </p>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem md={4} sm={4}>
-            <Card blog>
-              <CardHeader image>
-                <a href="#pablo">
-                  <img src={dg9} alt="..." />
-                </a>
-                <div
-                  className={classes.coloredShadow}
-                  style={{ backgroundImage: `url(${dg9})`, opacity: 1 }}
-                />
-              </CardHeader>
-              <CardBody>
-                <h6
-                  className={classNames(classes.cardCategory, classes.textRose)}
-                >
-                  Fashion Week
-                </h6>
-                <h4 className={classes.cardTitle}>
-                  <a href="#pablo">
-                    Check the latest fashion events and which are the trends
-                  </a>
-                </h4>
-                <p className={classes.cardDescription}>
-                  Don{"'"}t be scared of the truth because we need to restart
-                  the human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
-                </p>
-              </CardBody>
-            </Card>
-          </GridItem>
+                  </h4>
+                  <p className={classes.cardDescription}>
+                    {instructor.description}
+                  </p>
+                </CardBody>
+              </Card>
+            </GridItem>
+          ))}
         </GridContainer>
       </div>
     </div>
   );
+}
+
+SectionInstructors.propTypes = {
+  instructors: PropTypes.any
 }

@@ -14,7 +14,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Footer from "components/Footer/Footer.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import SectionBlog from "views/InstructorPage/Sections/Instructor.js";
+import SectionInstructors from "views/InstructorPage/Sections/Instructor.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -39,7 +39,7 @@ const useStyles = makeStyles(styles);
 
 export default function EcommercePage() {
 
-  const [instructors, setInstructors] = React.useState("");
+  const [instructors, setInstructors] = React.useState([]);
 
   const fetchInstructors = () => {
     const url = "http://localhost:3000/instructors/";
@@ -54,8 +54,8 @@ export default function EcommercePage() {
   }
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
+    // window.scrollTo(0, 0);
+    // document.body.scrollTop = 0;
     fetchInstructors();
   });
   const classes = useStyles();
@@ -101,7 +101,7 @@ export default function EcommercePage() {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionBlog />
+      <SectionInstructors instructors={instructors} />
       </div>
 
       <div
