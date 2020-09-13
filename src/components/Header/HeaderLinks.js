@@ -36,6 +36,7 @@ import PersonAdd from "@material-ui/icons/PersonAdd";
 import Layers from "@material-ui/icons/Layers";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import LineStyle from "@material-ui/icons/LineStyle";
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import Error from "@material-ui/icons/Error";
 
 // core components
@@ -203,10 +204,19 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={ViewCarousel}
           dropdownList={[
-            <Link to="/about-us" className={classes.dropdownLink}>
-              <AccountBalance className={classes.dropdownIcons} /> About Us
+            <Link to="/login-page" className={classes.dropdownLink}>
+              <Fingerprint className={classes.dropdownIcons} /> Login Page
             </Link>,
-            <Link to="/blog-post" className={classes.dropdownLink}>
+            <Link to="/signup-page" className={classes.dropdownLink}>
+              <PersonAdd className={classes.dropdownIcons} /> Signup Page
+            </Link>,
+            <Link to="/instructor-page" className={classes.dropdownLink}>
+              <AssignmentIndIcon className={classes.dropdownIcons} /> Instructor Page
+            </Link>,
+            <Link to="/profile-page" className={classes.dropdownLink}>
+              <AccountCircle className={classes.dropdownIcons} /> Profile Page
+            </Link>,
+             <Link to="/blog-post" className={classes.dropdownLink}>
               <ArtTrack className={classes.dropdownIcons} /> Blog Post
             </Link>,
             <Link to="/blog-posts" className={classes.dropdownLink}>
@@ -215,33 +225,9 @@ export default function HeaderLinks(props) {
             <Link to="/contact-us" className={classes.dropdownLink}>
               <LocationOn className={classes.dropdownIcons} /> Contact Us
             </Link>,
-            <Link to="/landing-page" className={classes.dropdownLink}>
-              <ViewDay className={classes.dropdownIcons} /> Landing Page
+            <Link to="/about-us" className={classes.dropdownLink}>
+              <AccountBalance className={classes.dropdownIcons} /> About Us
             </Link>,
-            <Link to="/login-page" className={classes.dropdownLink}>
-              <Fingerprint className={classes.dropdownIcons} /> Login Page
-            </Link>,
-            <Link to="/pricing" className={classes.dropdownLink}>
-              <AttachMoney className={classes.dropdownIcons} /> Pricing Page
-            </Link>,
-            <Link to="/shopping-cart-page" className={classes.dropdownLink}>
-              <ShoppingBasket className={classes.dropdownIcons} /> Shopping Cart
-            </Link>,
-            <Link to="/ecommerce-page" className={classes.dropdownLink}>
-              <Store className={classes.dropdownIcons} /> Ecommerce Page
-            </Link>,
-            <Link to="/product-page" className={classes.dropdownLink}>
-              <ShoppingCart className={classes.dropdownIcons} /> Product Page
-            </Link>,
-            <Link to="/profile-page" className={classes.dropdownLink}>
-              <AccountCircle className={classes.dropdownIcons} /> Profile Page
-            </Link>,
-            <Link to="/signup-page" className={classes.dropdownLink}>
-              <PersonAdd className={classes.dropdownIcons} /> Signup Page
-            </Link>,
-            <Link to="/error-page" className={classes.dropdownLink}>
-              <Error className={classes.dropdownIcons} /> Error Page
-            </Link>
           ]}
         />
       </ListItem>
