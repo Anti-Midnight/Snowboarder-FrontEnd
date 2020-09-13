@@ -42,7 +42,7 @@ export default function EcommercePage() {
   const [instructors, setInstructors] = React.useState([]);
 
   const fetchInstructors = () => {
-    const url = "http://localhost:3000/instructors/";
+    const url = process.env.REACT_APP_REST_API_LOCATION + "/instructors/";
     fetch(url, {
       method: "GET",
       headers: { "Content-Type": "application/json" }

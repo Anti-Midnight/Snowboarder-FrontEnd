@@ -40,7 +40,7 @@ export default function LoginPage() {
     console.log(email);
     console.log(password);
 
-    let url = "http://localhost:3000/users/login";
+    let url = process.env.REACT_APP_REST_API_LOCATION + "/users/login";
     let user = {
       email:email,
       password: password

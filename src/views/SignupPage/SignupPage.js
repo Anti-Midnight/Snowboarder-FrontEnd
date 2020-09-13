@@ -61,7 +61,7 @@ export default function SignUpPage({ ...rest }) {
     console.log(email);
     console.log(password);
     
-    let url = "http://localhost:3000/users/";
+    let url = process.env.REACT_APP_REST_API_LOCATION + "/users/";
     let user = {
       name:name,
       email:email,
