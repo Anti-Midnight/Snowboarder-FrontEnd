@@ -16,7 +16,7 @@ import ListItem from "@material-ui/core/ListItem";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 import PinDrop from "@material-ui/icons/PinDrop";
-import Phone from "@material-ui/icons/Phone";
+import EmailIcon from '@material-ui/icons/Email';
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
 // core components
 import Header from "components/Header/Header.js";
@@ -123,7 +123,7 @@ export default function ContactUsPage() {
       />
       <div className={classes.bigMap}>
         <CustomSkinMap
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-lfYeFFp6OeoARCb5onknkh4HqYXn4FU"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={
             <div
@@ -142,7 +142,7 @@ export default function ContactUsPage() {
           <div className={classes.container}>
             <h2 className={classes.title}>Send us a message</h2>
             <GridContainer>
-              <GridItem md={6} sm={6}>
+              {/* <GridItem md={6} sm={6}>
                 <p>
                   You can contact us with anything related to our Products. We
                   {"'"}ll get in touch with you as soon as possible.
@@ -188,14 +188,14 @@ export default function ContactUsPage() {
                     </Button>
                   </div>
                 </form>
-              </GridItem>
-              <GridItem md={4} sm={4} className={classes.mlAuto}>
+              </GridItem> */}
+              <GridItem md={12} sm={12} className={classes.mlAuto}>
                 <InfoArea
                   className={classes.info}
                   title="Find us at the office"
                   description={
                     <p>
-                      Bld Mihail Kogalniceanu, nr. 8, <br /> 7652 Bucharest,{" "}
+                      Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu, nr. 8, <br /> 7652 Bucharest,{" "}
                       <br /> Romania
                     </p>
                   }
@@ -207,11 +207,11 @@ export default function ContactUsPage() {
                   title="Give us a ring"
                   description={
                     <p>
-                      Michael Jordan <br /> +40 762 321 762 <br /> Mon - Fri,
+                      Michael JBld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,ordan <br /> +40 762 321 762 <br /> Mon - Fri,
                       8:00-22:00
                     </p>
                   }
-                  icon={Phone}
+                  icon={EmailIcon}
                   iconColor="primary"
                 />
                 <InfoArea
