@@ -87,7 +87,7 @@ export default function SectionsPage() {
     <div>
       <Header
         color="info"
-        brand="Material Kit PRO React"
+        brand="Snowboarder Paradise"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
       />

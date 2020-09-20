@@ -35,7 +35,7 @@ export default function AboutUsPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
+        brand="Snowboarder Paradise"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"

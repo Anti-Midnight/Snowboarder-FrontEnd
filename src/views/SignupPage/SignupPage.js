@@ -90,7 +90,7 @@ export default function SignUpPage({ ...rest }) {
       <Header
         absolute
         color="transparent"
-        brand="Material Kit PRO React"
+        brand="Snowboarder Paradise"
         links={<HeaderLinks dropdownHoverColor="rose" />}
         {...rest}
       />
