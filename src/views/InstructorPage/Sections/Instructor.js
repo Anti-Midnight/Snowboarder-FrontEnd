@@ -12,10 +12,6 @@ import CardBody from "components/Card/CardBody.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import dg6 from "assets/img/dg6.jpg";
-import dg10 from "assets/img/dg10.jpg";
-import dg9 from "assets/img/dg9.jpg";
-
 import styles from "assets/jss/material-kit-pro-react/views/ecommerceSections/blogStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -33,23 +29,31 @@ export default function SectionInstructors(props) {
               <Card blog>
                 <CardHeader image>
                   <a href="#pablo">
+                    {/* const urlRandomGenerator = () => {
+                         
+
+                    } */}
                     <img src={instructor.imgURL} alt="..." />
                   </a>
                   <div
                     className={classes.coloredShadow}
-                    style={{ backgroundImage: `url(${instructor.imgURL})`, opacity: 1 }}
+                    style={{
+                      backgroundImage: `url(${instructor.imgURL})`,
+                      opacity: 1,
+                    }}
                   />
                 </CardHeader>
                 <CardBody>
                   <h3
-                    className={classNames(classes.cardCategory, classes.textRose)}
+                    className={classNames(
+                      classes.cardCategory,
+                      classes.textRose
+                    )}
                   >
                     {instructor.name}
                   </h3>
                   <h4 className={classes.cardTitle}>
-                    <a href="#pablo">
-                    {instructor.description}
-                  </a>
+                    <a href="#pablo">{instructor.description}</a>
                   </h4>
                   <p className={classes.cardDescription}>
                     {instructor.description}
@@ -65,5 +69,5 @@ export default function SectionInstructors(props) {
 }
 
 SectionInstructors.propTypes = {
-  instructors: PropTypes.any
-}
+  instructors: PropTypes.any,
+};
