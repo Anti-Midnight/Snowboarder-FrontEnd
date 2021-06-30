@@ -17,10 +17,8 @@ import AttachMoney from "@material-ui/icons/AttachMoney";
 import { makeStyles } from "@material-ui/core/styles";
 
 // images
-import Vodafone from "assets/img/assets-for-demo/ourClients/vodafone.jpg";
-import Microsoft from "assets/img/assets-for-demo/ourClients/microsoft.jpg";
-import Harvard from "assets/img/assets-for-demo/ourClients/harvard.jpg";
-import Standford from "assets/img/assets-for-demo/ourClients/stanford.jpg";
+import SchoolLogo from "assets/img/SchoolLogo.jpeg";
+import SchoolLogo2 from "assets/img/SchoolLogo2.png";
 import profilePic1 from "assets/img/assets-for-demo/test1.jpg";
 import profilePic2 from "assets/img/assets-for-demo/test2.jpg";
 import profilePic3 from "assets/img/assets-for-demo/test3.jpg";
@@ -46,12 +44,11 @@ export default function SectionOverview() {
           <GridContainer justify="center">
             <GridItem sm={3} className={classes.featuresShow}>
               <InfoArea
-                title="Material UI Grid"
+                title="Share Your Interesting Experiences"
                 description={
                   <p>
-                    Enjoy the fluid grid system based on 12 columns. Material
-                    Kit PRO is built over Bootstrap and has all the benefits
-                    that the framework comes with.
+                    Want to share your snowboarding experiences but don{"'"}t know where to post?
+                    Snowboard Paradise allows you to do that and can also connect you all the snowboarders around the world!
                   </p>
                 }
                 icon={Grid}
@@ -61,12 +58,12 @@ export default function SectionOverview() {
             </GridItem>
             <GridItem sm={3} className={classes.featuresShow}>
               <InfoArea
-                title="Fully Responsive"
+                title="Create Your Own Account"
                 description={
                   <p>
-                    This Material UI kit is built mobile-first and looks amazing
-                    on any device. Regardless of the screen size, the website
-                    content will naturally fit the given resolution.
+                    Snowboard Paradise allows you to create your own account!
+                    If you are a certified snowboard instructor, you can be on our profile!
+                    You can also trade snowboards here. Try your all kinds of snowboards!
                   </p>
                 }
                 icon={PhoneLink}
@@ -79,9 +76,9 @@ export default function SectionOverview() {
                 title="Save Time"
                 description={
                   <p>
-                    Using the Material Kit PRO will save you large amount of
-                    time. You don{"'"}t have to worry about customising the
-                    basic Bootstrap design or generating new components.
+                   Want to snowboard but don{"'"}t know where to start or find instructors? 
+                   Don't worry, we{"'"}ve got a lot for you to choose! Browse all the available instructors in the Instructor Page
+                   :) 
                   </p>
                 }
                 icon={AccessTime}
@@ -94,9 +91,8 @@ export default function SectionOverview() {
                 title="Save Money"
                 description={
                   <p>
-                    Creating your design from scratch with dedicated designers
-                    can be very expensive. Using a kit is the best option to
-                    start your development while bootstrapping your budget.
+                    Snowboard Paradise is dedicated to help you find the most suitable and cheapest instructors!
+                    Browse all the available instructors in the Instructor Page
                   </p>
                 }
                 icon={AttachMoney}
@@ -114,12 +110,12 @@ export default function SectionOverview() {
               md={8}
               className={classNames(classes.mlAuto, classes.mrAuto)}
             >
-              <h2 className={classes.title}>Trusted by 330.000+ People</h2>
+              <h2 className={classes.title}>Trusted by 3000+ People</h2>
               <h5 className={classes.description}>
-                The UI Kits, Templates and Dashboards that we{"'"}ve created are
+                The website we{"'"}ve created are
                 used by
-                <b> 330,000+ web developers</b> in over{" "}
-                <b> 576.000 Web Projects</b>. This is what some of them think:
+                <b> 3000+ hard-core snowboarders.</b> {" "}
+                This is what some of them think:
               </h5>
             </GridItem>
           </GridContainer>
@@ -152,8 +148,7 @@ export default function SectionOverview() {
                     <CardBody plain className={classes.alignLeft}>
                       <h4 className={classes.cardTitle}>Khaldi Yass</h4>
                       <p className={classes.cardDescription}>
-                        {'"'}As soon as I saw this kit, everything else isn
-                        {"'"}t the same anymore, I just can{"'"}t describe it
+                        {'"'}As soon as I saw this website, snowboarding becomes so much easier. I just can{"'"}t describe it
                         guys! Thank you for this work!{'"'}
                       </p>
                     </CardBody>
@@ -189,9 +184,8 @@ export default function SectionOverview() {
                     <CardBody plain className={classes.alignLeft}>
                       <h4 className={classes.cardTitle}>Josh Murray</h4>
                       <p className={classes.cardDescription}>
-                        {'"'}Great kit! Used this for a client already and he is
-                        over the moon. Keep up the good work Creative Tim! 10/10
-                        for design, colours, and the feel of the kit.
+                        {'"'}Great website! I found my instructor here and have been following him for only one season, but my skills
+                        skyrocketed! I have commended to all my friends who are interested in snowboarding
                         {'"'}
                       </p>
                     </CardBody>
@@ -227,7 +221,8 @@ export default function SectionOverview() {
                     <CardBody plain className={classes.alignLeft}>
                       <h4 className={classes.cardTitle}>Michael Onubogu</h4>
                       <p className={classes.cardDescription}>
-                        {'"'}Damn Daniel!!! This Material UI Kit is fresh AF!
+                        {'"'}Damn, Snowboard Paradise is very creative! It allows me to share my interesting experiences with the snowboarders around the world, and t
+                        that feels amazing!
                         Amazing work!{'"'}
                       </p>
                     </CardBody>
@@ -239,17 +234,13 @@ export default function SectionOverview() {
           <div className={classes.ourClients}>
             <GridContainer justify="center">
               <GridItem md={3} sm={3}>
-                <img src={Vodafone} alt="vodafone" />
+                <img src={SchoolLogo} alt="semiahmoo secondary schoool 1" />
               </GridItem>
+
               <GridItem md={3} sm={3}>
-                <img src={Microsoft} alt="microsoft" />
+                <img src={SchoolLogo2} alt="semiahmoo secondary schoool 2" />
               </GridItem>
-              <GridItem md={3} sm={3}>
-                <img src={Harvard} alt="harvard" />
-              </GridItem>
-              <GridItem md={3} sm={3}>
-                <img src={Standford} alt="stanford" />
-              </GridItem>
+             
             </GridContainer>
           </div>
         </div>

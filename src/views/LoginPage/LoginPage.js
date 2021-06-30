@@ -94,34 +94,10 @@ export default function LoginPage() {
                   >
                     <h4 className={classes.cardTitle}>Login</h4>
                     <div className={classes.socialLine}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.iconButtons}
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.iconButtons}
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className="fab fa-facebook" />
-                      </Button>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.iconButtons}
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className="fab fa-google-plus-g" />
-                      </Button>
                     </div>
                   </CardHeader>
                   <p className={classes.description + " " + classes.textCenter}>
-                    Or Be Classical
+                    Just Be Classical!
                   </p>
                   <CardBody signup>
                     <CustomInput
@@ -177,15 +153,7 @@ export default function LoginPage() {
             <div>
               <div className={classes.left}>
                 <List className={classes.list}>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/?ref=mkpr-login"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Creative Tim
-                    </a>
-                  </ListItem>
+                  
                   <ListItem className={classes.inlineBlock}>
                     <a
                       href="https://www.creative-tim.com/presentation?ref=mkpr-login"
@@ -193,23 +161,6 @@ export default function LoginPage() {
                       className={classes.block}
                     >
                       About us
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="//blog.creative-tim.com/"
-                      className={classes.block}
-                    >
-                      Blog
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/license?ref=mkpr-login"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Licenses
                     </a>
                   </ListItem>
                 </List>
@@ -221,7 +172,7 @@ export default function LoginPage() {
                   href="https://www.creative-tim.com?ref=mkpr-login"
                   target="_blank"
                 >
-                  Creative Tim
+                  Frank Li
                 </a>{" "}
                 for a better web
               </div>

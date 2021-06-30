@@ -97,7 +97,7 @@ export default function SectionPills() {
                 human foundation in truth And I love you like Kanye loves Kanye
                 I love Rick Owens’ bed design but the back is...
               </p>
-              <Button round href="#pablo" color="primary">
+              <Button round href="/blog-post" color="primary">
                 <FormatAlignLeft className={classes.icons} /> Read article
               </Button>
             </CardBody>

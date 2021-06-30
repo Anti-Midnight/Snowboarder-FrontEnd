@@ -75,7 +75,7 @@ export default function HeaderLinks(props) {
       currentTime = 0,
       increment = 20;
 
-    var animateScroll = function() {
+    var animateScroll = function () {
       currentTime += increment;
       var val = easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
@@ -96,99 +96,17 @@ export default function HeaderLinks(props) {
           noLiPadding
           navDropdown
           hoverColor={dropdownHoverColor}
-          buttonText="Components"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              <LineStyle className={classes.dropdownIcons} /> Presentation Page
-            </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
-              <Layers className={classes.dropdownIcons} />
-              All components
-            </Link>,
-            <a
-              href="https://demos.creative-tim.com/material-kit-pro-react/#/documentation/tutorial?ref=mkpr-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              <Icon className={classes.dropdownIcons}>content_paste</Icon>
-              Documentation
-            </a>
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={dropdownHoverColor}
-          buttonText="Sections"
+          buttonText="Blogs"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
           buttonIcon={ViewDay}
           dropdownList={[
-            <Link
-              to="/sections#headers"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "headers")}
-            >
-              <Dns className={classes.dropdownIcons} /> Headers
-            </Link>,
-            <Link
-              to="/sections#features"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "features")}
-            >
-              <Build className={classes.dropdownIcons} /> Features
-            </Link>,
-            <Link
-              to="/sections#blogs"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "blogs")}
-            >
-              <ListIcon className={classes.dropdownIcons} /> Blogs
-            </Link>,
-            <Link
-              to="/sections#teams"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "teams")}
-            >
-              <People className={classes.dropdownIcons} /> Teams
-            </Link>,
-            <Link
-              to="/sections#projects"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "projects")}
-            >
-              <Assignment className={classes.dropdownIcons} /> Projects
-            </Link>,
-            <Link
-              to="/sections#pricing"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "pricing")}
-            >
-              <MonetizationOn className={classes.dropdownIcons} /> Pricing
-            </Link>,
-            <Link
-              to="/sections#testimonials"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "testimonials")}
-            >
-              <Chat className={classes.dropdownIcons} /> Testimonials
-            </Link>,
-            <Link
-              to="/sections#contacts"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "contacts")}
-            >
-              <Call className={classes.dropdownIcons} /> Contacts
+            <Link to="/blog-posts" className={classes.dropdownLink}>
+              <ViewQuilt className={classes.dropdownIcons} /> Blog Posts
             </Link>
+
           ]}
         />
       </ListItem>
@@ -197,7 +115,7 @@ export default function HeaderLinks(props) {
           noLiPadding
           navDropdown
           hoverColor={dropdownHoverColor}
-          buttonText="Examples"
+          buttonText="User Info"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
@@ -215,12 +133,6 @@ export default function HeaderLinks(props) {
             </Link>,
             <Link to="/profile-page" className={classes.dropdownLink}>
               <AccountCircle className={classes.dropdownIcons} /> Profile Page
-            </Link>,
-             <Link to="/blog-post" className={classes.dropdownLink}>
-              <ArtTrack className={classes.dropdownIcons} /> Blog Post
-            </Link>,
-            <Link to="/blog-posts" className={classes.dropdownLink}>
-              <ViewQuilt className={classes.dropdownIcons} /> Blog Posts
             </Link>,
             <Link to="/contact-us" className={classes.dropdownLink}>
               <LocationOn className={classes.dropdownIcons} /> Contact Us

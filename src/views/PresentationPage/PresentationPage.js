@@ -56,11 +56,11 @@ export default function PresentationPage() {
             <GridItem>
               <div className={classes.brand}>
                 <h1>
-                  Material Kit React
+                  Designed for All Snowboarders
                   <span className={classes.proBadge}>PRO</span>
                 </h1>
                 <h3 className={classes.title}>
-                  A Badass Material-UI Kit based on Material Design.
+                  Wohoo!
                 </h3>
               </div>
             </GridItem>
@@ -71,10 +71,6 @@ export default function PresentationPage() {
         <SectionDescription />
         <SectionComponents />
         <SectionCards />
-        <SectionContent />
-        <SectionSections />
-        <SectionExamples />
-        <SectionFreeDemo />
         <SectionOverview />
       </div>
       <SectionPricing />
@@ -88,7 +84,7 @@ export default function PresentationPage() {
                 target="_blank"
                 className={classes.footerBrand}
               >
-                Material Kit PRO React
+                Snowboard Paradise
               </a>
             </div>
             <div className={classes.pullCenter}>
@@ -99,7 +95,7 @@ export default function PresentationPage() {
                     target="_blank"
                     className={classes.block}
                   >
-                    Creative Tim
+                    Frank the Tank
                   </a>
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>
