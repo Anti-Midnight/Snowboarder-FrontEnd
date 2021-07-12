@@ -28,7 +28,7 @@ export default function SectionInstructors(props) {
             <GridItem md={4} sm={4}>
               <Card blog>
                 <CardHeader image>
-                  <a href="#pablo">
+                  <a href={"profile-page/" + instructor._id}>
                     {/* const urlRandomGenerator = () => {
                          
 
@@ -53,7 +53,7 @@ export default function SectionInstructors(props) {
                     {instructor.name}
                   </h3>
                   <h4 className={classes.cardTitle}>
-                    <a href="#pablo">{instructor.description}</a>
+                    <a href={"profile-page/" + instructor._id}>ID</a>
                   </h4>
                   <p className={classes.cardDescription}>
                     {instructor.description}

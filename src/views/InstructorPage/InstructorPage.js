@@ -50,14 +50,14 @@ export default function EcommercePage() {
       .then(res => res.json())
       .then(data => setInstructors(data))
       .catch(err => console.log(err))
-
+      
   }
 
   React.useEffect(() => {
     // window.scrollTo(0, 0);
     // document.body.scrollTop = 0;
     fetchInstructors();
-  });
+  },[]);
   const classes = useStyles();
 
   return (
