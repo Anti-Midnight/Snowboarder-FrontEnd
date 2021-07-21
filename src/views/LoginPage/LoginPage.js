@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+import { useHistory, Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -31,6 +32,7 @@ const useStyles = makeStyles(loginPageStyle);
 export default function LoginPage() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  let history = useHistory();
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
@@ -57,8 +59,9 @@ export default function LoginPage() {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        let token = data.token
-        localStorage.setItem("token", token)
+        let token = data.token;
+        localStorage.setItem("token", token);
+        history.push("/");
       })
       .catch(error => console.log(error))
 

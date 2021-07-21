@@ -116,7 +116,7 @@ export default function ContactUsPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
+        brand="Snowboard Paradise"
         links={<HeaderLinks dropdownHoverColor="dark" />}
         fixed
         color="dark"
@@ -195,8 +195,9 @@ export default function ContactUsPage() {
                   title="Find us at the office"
                   description={
                     <p>
-                      Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu, nr. 8, <br /> 7652 Bucharest,{" "}
-                      <br /> Romania
+                      Location: 1785 148 St, Surrey, BC, Canada<br/>
+                      Postal Code: V4A 4M6 <br/>
+                      Semiahmoo Secondary School<br/>
                     </p>
                   }
                   icon={PinDrop}
@@ -204,11 +205,10 @@ export default function ContactUsPage() {
                 />
                 <InfoArea
                   className={classes.info}
-                  title="Give us a ring"
+                  title="Email Us"
                   description={
                     <p>
-                      Michael JBld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,Bld Mihail Kogalniceanu,ordan <br /> +40 762 321 762 <br /> Mon - Fri,
-                      8:00-22:00
+                      Frank Li <br /> +1 604-728-0889 <br /> Anytime you wish
                     </p>
                   }
                   icon={EmailIcon}
@@ -219,8 +219,7 @@ export default function ContactUsPage() {
                   title="Legal Information"
                   description={
                     <p>
-                      Creative Tim Ltd. <br /> VAT · EN2341241 <br /> IBAN ·
-                      EN8732ENGB2300099123 <br /> Bank · Great Britain Bank
+                      Snowboard Paradise <br /> lbh040505@gmail.com <br /> 
                     </p>
                   }
                   icon={BusinessCenter}
@@ -236,15 +235,7 @@ export default function ContactUsPage() {
           <div>
             <div className={classes.left}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-contact-us"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
+                
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-contact-us"
@@ -277,9 +268,9 @@ export default function ContactUsPage() {
                 href="https://www.creative-tim.com?ref=mkpr-contact-us"
                 target="_blank"
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environment.
             </div>
           </div>
         }

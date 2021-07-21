@@ -1,33 +1,27 @@
-/* eslint-disable */
+// /* eslint-disable */
 import React from "react";
-import { useHistory, Link } from "react-router-dom";
-import { MyContext } from "Context.js";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
+import { useHistory, Link } from "react-router-dom";
+import { MyContext } from "Context.jsx";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Badge from "@material-ui/core/Badge";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
-import ViewDay from "@material-ui/icons/ViewDay";
-import ViewCarousel from "@material-ui/icons/ViewCarousel";
-import AccountBalance from "@material-ui/icons/AccountBalance";
-import ViewQuilt from "@material-ui/icons/ViewQuilt";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Fingerprint from "@material-ui/icons/Fingerprint";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import PersonAdd from "@material-ui/icons/PersonAdd";
+// @material-ui/icons
 import PersonIcon from "@material-ui/icons/Person";
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import ShoppingCart from "@material-ui/icons/ShoppingCart";
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
-import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyle.js";
+
+import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyle.jsx";
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   let context = React.useContext(MyContext);
+  let badge = context.state.cart.length;
   let history = useHistory();
   const { dropdownHoverColor } = props;
   const classes = useStyles();
@@ -37,14 +31,13 @@ export default function HeaderLinks(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token")
+        Authorization: "Bearer " + localStorage.getItem("jwt")
       }
     })
       .then(res => res.json())
       .then(data => {
         localStorage.clear();
-        // context.updateUserStatus();
-        //console.log(context);
+        context.updateUserStatus();
         console.log("Sign out res:");
         console.log(data);
         history.push("/");
@@ -55,55 +48,26 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list + " " + classes.mlAuto}>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={dropdownHoverColor}
-          buttonText="Blogs"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={ViewDay}
-          dropdownList={[
-            <Link to="/blog-posts" className={classes.dropdownLink}>
-              <ViewQuilt className={classes.dropdownIcons} /> Blog Posts
-            </Link>
-
-          ]}
-        />
+        <Button
+          href="/admin/products"
+          className={classes.navLink}
+          color="transparent"
+          target="_blank"
+        >
+          Admin
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={dropdownHoverColor}
-          buttonText="User Info"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={ViewCarousel}
-          dropdownList={[
-            <Link to="/signup-page" className={classes.dropdownLink}>
-              <PersonAdd className={classes.dropdownIcons} /> Signup Page
-            </Link>,
-            <Link to="/instructor-page" className={classes.dropdownLink}>
-              <AssignmentIndIcon className={classes.dropdownIcons} /> Instructor Page
-            </Link>,
-            <Link to="/profile-page" className={classes.dropdownLink}>
-              <AccountCircle className={classes.dropdownIcons} /> Profile Page
-            </Link>,
-            <Link to="/contact-us" className={classes.dropdownLink}>
-              <LocationOn className={classes.dropdownIcons} /> Contact Us
-            </Link>,
-            <Link to="/about-us" className={classes.dropdownLink}>
-              <AccountBalance className={classes.dropdownIcons} /> About Us
-            </Link>
-          ]}
-        />
+        <Button
+          href="#pablo"
+          className={classes.navLink}
+          onClick={e => e.preventDefault()}
+          color="transparent"
+        >
+          About us
+        </Button>
       </ListItem>
-      {localStorage.getItem("token") ? (
+      {localStorage.getItem("jwt") ? (
         <ListItem className={classes.listItem}>
           <CustomDropdown
             noLiPadding
@@ -118,7 +82,7 @@ export default function HeaderLinks(props) {
                 {context => (
                   <React.Fragment>
                     <PersonIcon />
-                    {"Hi, "  + context.state.userProfile["name"]} 
+                    {"Hi, " + context.state.userProfile["name"]}
                     {/* {window.innerWidth < 960 &&
                       "Hi, " + context.state.userProfile["name"]} */}
                   </React.Fragment>
@@ -158,7 +122,7 @@ export default function HeaderLinks(props) {
       ) : (
         <ListItem className={classes.listItem}>
           <Button
-            onClick={() => history.push("/login-page")}
+            onClick={() => history.push("/login")}
             className={classes.navLink}
             color="transparent"
           >
@@ -167,15 +131,17 @@ export default function HeaderLinks(props) {
         </ListItem>
       )}
       <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-navbar"
-          color={window.innerWidth < 960 ? "info" : "white"}
-          target="_blank"
-          className={classes.navButton}
-          round
-        >
-          <ShoppingCart className={classes.icons} /> buy now
-        </Button>
+        <Link to="/shopping-cart">
+          <Button
+            color={window.innerWidth < 960 ? "info" : "white"}
+            className={classes.navButton}
+            round
+          >
+            <Badge badgeContent={badge} variant="dot" color="secondary">
+              <ShoppingCart className={classes.icons} /> Cart
+            </Badge>
+          </Button>
+        </Link>
       </ListItem>
     </List>
   );
