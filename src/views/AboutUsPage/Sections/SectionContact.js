@@ -35,9 +35,8 @@ export default function SectionContact() {
             Want to work with us?
           </h2>
           <h4 className={classNames(classes.description, classes.textCenter)}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will get back to you in a couple of hours.
+            If you are interested in joining this amazing team, please email us with your ideal role, and 
+             we will get back to you in a couple of hours.
           </h4>
           <form>
             <GridContainer>

@@ -22,11 +22,12 @@ export default function SectionDescription() {
           className={classNames(classes.mrAuto, classes.mlAuto)}
         >
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+            Welcome! My name is Frank Li, the main designer of Snowboard Paradise! I'm currently an incoming grade 12 student
+            at Semiahmoo Secondary School in South Surrey, Canada. I'm a certified CASI Level 1 Snowboard Instructor
+            who is also passionate about computer programming. <br/><br/>The purpose of this website is to connect the snowboarders around the world to
+            share their interesting experiences. Ever felt lonely when snowboarding? Snowboard Paradise will be the right place 
+            for you to build strong relationships with other snowboarders.<br/>
+                                      I think that's it, thanks for reading :)
           </h5>
         </GridItem>
       </GridContainer>
