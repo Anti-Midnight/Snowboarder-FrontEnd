@@ -151,7 +151,7 @@ export default function ProfilePage(props) {
               tabs={[
 
                 {
-                  tabButton: "Connections",
+                  tabButton: "Experience",
                   tabIcon: People,
                   tabContent: (
                     <div>
@@ -291,9 +291,9 @@ export default function ProfilePage(props) {
                 href="https://www.creative-tim.com?ref=mkpr-profile"
                 target="_blank"
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environment.
             </div>
           </div>
         }

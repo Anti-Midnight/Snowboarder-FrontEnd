@@ -35,7 +35,7 @@ export default function BlogPostPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
+        brand="Snowboard Paradise"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
@@ -76,15 +76,7 @@ export default function BlogPostPage() {
           <div>
             <div className={classes.left}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-blog-post"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
+                
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-blog-post"
@@ -121,9 +113,9 @@ export default function BlogPostPage() {
                 href="https://www.creative-tim.com?ref=mkpr-blog-post"
                 target="_blank"
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environment.
             </div>
           </div>
         }

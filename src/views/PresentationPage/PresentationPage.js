@@ -38,7 +38,7 @@ export default function PresentationPage() {
   return (
     <div>
       <Header
-        brand="Snowboarder Paradise"
+        brand="Snowboard Paradise"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
@@ -89,15 +89,7 @@ export default function PresentationPage() {
             </div>
             <div className={classes.pullCenter}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Frank the Tank
-                  </a>
-                </ListItem>
+                
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-presentation"

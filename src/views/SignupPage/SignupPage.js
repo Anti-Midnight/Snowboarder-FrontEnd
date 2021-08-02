@@ -112,22 +112,22 @@ export default function SignUpPage({ ...rest }) {
                     <GridItem xs={12} sm={5} md={5}>
                       <InfoArea
                         className={classes.infoArea}
-                        title="Marketing"
-                        description="We've created the marketing campaign of the website. It was a very interesting collaboration."
+                        title="Share Your Interests in Snowboarding With Snowboarders Around the World"
+                        description="We created this website for a better snowboarding environment. You get to know the snowboarders around the world who share the same interest with you!"
                         icon={Timeline}
                         iconColor="rose"
                       />
                       <InfoArea
                         className={classes.infoArea}
-                        title="Fully Coded in HTML5"
-                        description="We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub."
+                        title="Developed by high school students"
+                        description="The website and the app are completely developed by high school students who are passionate about coding and snowboarding."
                         icon={Code}
                         iconColor="primary"
                       />
                       <InfoArea
                         className={classes.infoArea}
-                        title="Built Audience"
-                        description="There is also a Fully Customizable CMS Admin Dashboard for this product."
+                        title="Audience"
+                        description="More than 500 users have signed up, and the majority of them are active users of Snowboard Paradise, so what are you waiting for?"
                         icon={Group}
                         iconColor="info"
                       />
@@ -252,15 +252,7 @@ export default function SignUpPage({ ...rest }) {
             <div>
               <div className={classes.left}>
                 <List className={classes.list}>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/?ref=mkpr-signup"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Creative Tim
-                    </a>
-                  </ListItem>
+                  
                   <ListItem className={classes.inlineBlock}>
                     <a
                       href="https://www.creative-tim.com/presentation?ref=mkpr-signup"
@@ -296,9 +288,9 @@ export default function SignUpPage({ ...rest }) {
                   href="https://www.creative-tim.com?ref=mkpr-signup"
                   target="_blank"
                 >
-                  Creative Tim
+                  Frank Li
                 </a>{" "}
-                for a better web.
+                for a better environment.
               </div>
             </div>
           }

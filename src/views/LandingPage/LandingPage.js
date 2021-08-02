@@ -83,15 +83,7 @@ export default function LandingPage({ ...rest }) {
           <div>
             <div className={classes.left}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-landing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
+                
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-landing"
@@ -124,9 +116,9 @@ export default function LandingPage({ ...rest }) {
                 href="https://www.creative-tim.com/?ref=mkpr-landing"
                 target="_blank"
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environtment.
             </div>
           </div>
         }

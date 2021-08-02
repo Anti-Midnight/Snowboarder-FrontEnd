@@ -22,7 +22,7 @@ export default function SectionInstructors(props) {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <h2 className={classes.sectionTitle}>Latest Articles</h2>
+        <h2 className={classes.sectionTitle}>Snowboard Instructor List</h2>
         <GridContainer>
           {instructors.map((instructor) => (
             <GridItem md={4} sm={4}>

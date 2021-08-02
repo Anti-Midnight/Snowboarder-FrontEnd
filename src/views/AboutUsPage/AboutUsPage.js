@@ -35,7 +35,7 @@ export default function AboutUsPage() {
   return (
     <div>
       <Header
-        brand="Snowboarder Paradise"
+        brand="Snowboard Paradise"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
@@ -69,7 +69,7 @@ export default function AboutUsPage() {
         <div className={classes.container}>
           <SectionDescription />
           <SectionTeam />
-          <SectionServices />
+         
           <SectionOffice />
           <SectionContact />
         </div>
@@ -79,15 +79,7 @@ export default function AboutUsPage() {
           <div>
             <div className={classes.left}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-about-us"
-                    className={classes.block}
-                    target="_blank"
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
+                
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-about-us"
@@ -124,9 +116,9 @@ export default function AboutUsPage() {
                 href="https://www.creative-tim.com?ref=mkpr-about-us"
                 target="_blank"
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environment.
             </div>
           </div>
         }
