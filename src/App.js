@@ -10,6 +10,7 @@ import ComponentsPage from "views/ComponentsPage/ComponentsPage.js";
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
 import EcommercePage from "views/EcommercePage/EcommercePage.js";
 import InstructorPage from "views/InstructorPage/InstructorPage.js";
+import MarketPage from "views/Market/MarketPage.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
 import PresentationPage from "views/PresentationPage/PresentationPage.js";
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/contact-us" component={ContactUsPage} />
           <Route path="/ecommerce-page" component={EcommercePage} />
           <Route path="/instructor-page" component={InstructorPage} />
+          <Route path="/market-page" component={MarketPage} />
           <Route path="/landing-page" component={LandingPage} />
           <Route path="/login-page" component={LoginPage} />
           <Route path="/pricing" component={PricingPage} />

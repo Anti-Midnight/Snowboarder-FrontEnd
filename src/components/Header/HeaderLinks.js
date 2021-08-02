@@ -91,9 +91,7 @@ export default function HeaderLinks(props) {
             <Link to="/instructor-page" className={classes.dropdownLink}>
               <AssignmentIndIcon className={classes.dropdownIcons} /> Instructor Page
             </Link>,
-            <Link to="/profile-page" className={classes.dropdownLink}>
-              <AccountCircle className={classes.dropdownIcons} /> Profile Page
-            </Link>,
+           
             <Link to="/contact-us" className={classes.dropdownLink}>
               <LocationOn className={classes.dropdownIcons} /> Contact Us
             </Link>,
@@ -168,13 +166,12 @@ export default function HeaderLinks(props) {
       )}
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-navbar"
+          href="/market-page"
           color={window.innerWidth < 960 ? "info" : "white"}
-          target="_blank"
           className={classes.navButton}
           round
         >
-          <ShoppingCart className={classes.icons} /> buy now
+          <ShoppingCart className={classes.icons} /> Market
         </Button>
       </ListItem>
     </List>
