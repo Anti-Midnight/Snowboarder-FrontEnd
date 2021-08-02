@@ -47,6 +47,23 @@ import product4 from "assets/img/examples/product4.jpg";
 const useStyles = makeStyles(productStyle);
 
 export default function ProductPage() {
+  const [snowboard, setSnowboard] = React.useState({ "contact": [], "experience": [] });
+  const fetchSnowboardByID = () => {
+    // const snowboardID = props.match.params.id;
+    const snowboardID = "60f7c3d891bdb9b01b356cb1";
+    const url = process.env.REACT_APP_REST_API_LOCATION + "/snowboards/" + snowboardID;
+    fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSnowboard(data);
+        console.log(data);
+      })
+      .catch(err => console.log(err))
+
+  }
   const [colorSelect, setColorSelect] = React.useState("0");
   const [sizeSelect, setSizeSelect] = React.useState("0");
   const classes = useStyles();
@@ -68,6 +85,11 @@ export default function ProductPage() {
       thumbnail: product2
     }
   ];
+  
+  React.useEffect(() => {
+    fetchSnowboardByID();
+  }, []);
+
   return (
     <div className={classes.productPage}>
       <Header
