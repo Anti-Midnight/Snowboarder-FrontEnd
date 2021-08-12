@@ -46,11 +46,10 @@ import product4 from "assets/img/examples/product4.jpg";
 
 const useStyles = makeStyles(productStyle);
 
-export default function ProductPage() {
-  const [snowboard, setSnowboard] = React.useState({ "contact": [], "experience": [] });
+export default function ProductPage(props) {
+  const [snowboard, setSnowboard] = React.useState({ "price": 0, "imgURL": [] });
   const fetchSnowboardByID = () => {
-    // const snowboardID = props.match.params.id;
-    const snowboardID = "60f7c3d891bdb9b01b356cb1";
+    const snowboardID = props.match.params.id;
     const url = process.env.REACT_APP_REST_API_LOCATION + "/snowboards/" + snowboardID;
     fetch(url, {
       method: "GET",
@@ -64,28 +63,17 @@ export default function ProductPage() {
       .catch(err => console.log(err))
 
   }
-  const [colorSelect, setColorSelect] = React.useState("0");
-  const [sizeSelect, setSizeSelect] = React.useState("0");
+
   const classes = useStyles();
-  const images = [
-    {
-      original: product3,
-      thumbnail: product3
-    },
-    {
-      original: product4,
-      thumbnail: product4
-    },
-    {
-      original: product1,
-      thumbnail: product1
-    },
-    {
-      original: product2,
-      thumbnail: product2
-    }
-  ];
-  
+
+  const images = [];
+  snowboard.imgURL.map(image => {
+    images.push({
+      original: image,
+      thumbnail: image
+    })
+  })
+
   React.useEffect(() => {
     fetchSnowboardByID();
   }, []);
@@ -125,10 +113,10 @@ export default function ProductPage() {
                 <ImageGallery
                   showFullscreenButton={false}
                   showPlayButton={false}
-                  startIndex={3}
+                  startIndex={0}
                   items={images}
                   showThumbnails={true}
-                  renderLeftNav={(onClick,disabled) => {
+                  renderLeftNav={(onClick, disabled) => {
                     return (
                       <button
                         className='image-gallery-left-nav'
@@ -137,7 +125,7 @@ export default function ProductPage() {
                       />
                     );
                   }}
-                  renderRightNav={(onClick,disabled) => {
+                  renderRightNav={(onClick, disabled) => {
                     return (
                       <button
                         className='image-gallery-right-nav'
@@ -149,8 +137,8 @@ export default function ProductPage() {
                 />
               </GridItem>
               <GridItem md={6} sm={6}>
-                <h2 className={classes.title}>Becky Silk Blazer</h2>
-                <h3 className={classes.mainPrice}>$335</h3>
+                <h2 className={classes.title}>{snowboard.name}</h2>
+                <h3 className={classes.mainPrice}>${snowboard.price.$numberDecimal}</h3>
                 <Accordion
                   active={0}
                   activeColor="rose"
@@ -159,153 +147,37 @@ export default function ProductPage() {
                       title: "Description",
                       content: (
                         <p>
-                          Eres{"'"} daring {"'"}Grigri Fortune{"'"} swimsuit has
-                          the fit and coverage of a bikini in a one-piece
-                          silhouette. This fuchsia style is crafted from the
-                          label{"'"}s sculpting peau douce fabric and has
-                          flattering cutouts through the torso and back. Wear
-                          yours with mirrored sunglasses on vacation.
+                          {snowboard.description}<br />
+
                         </p>
+
                       )
                     },
                     {
-                      title: "Designer Information",
+                      title: "Board Information",
                       content: (
                         <p>
-                          An infusion of West Coast cool and New York attitude,
-                          Rebecca Minkoff is synonymous with It girl style.
-                          Minkoff burst on the fashion scene with her
-                          best-selling {"'"}Morning After Bag{"'"} and later
-                          expanded her offering with the Rebecca Minkoff
-                          Collection - a range of luxe city staples with a {'"'}
-                          downtown romantic{'"'} theme.
+                          Flex: {snowboard.flex}<br />
+                          Length: {snowboard.length}<br />
+                          Camber Profile: {snowboard.camberProfile}<br />
+                          Terrain: {snowboard.terrain}<br />
+                          Shape: {snowboard.shape}<br />
+                          Setback Stance: {snowboard.setbackStance}<br />
+
                         </p>
                       )
                     },
                     {
-                      title: "Details and Care",
+                      title: "Contact the Seller",
                       content: (
-                        <ul>
-                          <li>Storm and midnight-blue stretch cotton-blend</li>
-                          <li>
-                            Notch lapels, functioning buttoned cuffs, two front
-                            flap pockets, single vent, internal pocket
-                          </li>
-                          <li>Two button fastening</li>
-                          <li>84% cotton, 14% nylon, 2% elastane</li>
-                          <li>Dry clean</li>
-                        </ul>
+                        <p>
+                          Seller Info:
+                          <br />{snowboard.sellerInfo}
+                        </p>
                       )
                     }
                   ]}
                 />
-                <GridContainer className={classes.pickSize}>
-                  <GridItem md={6} sm={6}>
-                    <label>Select color</label>
-                    <FormControl
-                      fullWidth
-                      className={classes.selectFormControl}
-                    >
-                      <Select
-                        MenuProps={{
-                          className: classes.selectMenu
-                        }}
-                        classes={{
-                          select: classes.select
-                        }}
-                        value={colorSelect}
-                        onChange={event => setColorSelect(event.target.value)}
-                        inputProps={{
-                          name: "colorSelect",
-                          id: "color-select"
-                        }}
-                      >
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="0"
-                        >
-                          Rose
-                        </MenuItem>
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="1"
-                        >
-                          Gray
-                        </MenuItem>
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="2"
-                        >
-                          White
-                        </MenuItem>
-                      </Select>
-                    </FormControl>
-                  </GridItem>
-                  <GridItem md={6} sm={6}>
-                    <label>Select size</label>
-                    <FormControl
-                      fullWidth
-                      className={classes.selectFormControl}
-                    >
-                      <Select
-                        MenuProps={{
-                          className: classes.selectMenu
-                        }}
-                        classes={{
-                          select: classes.select
-                        }}
-                        value={sizeSelect}
-                        onChange={event => setSizeSelect(event.target.value)}
-                        inputProps={{
-                          name: "sizeSelect",
-                          id: "size-select"
-                        }}
-                      >
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="0"
-                        >
-                          Small
-                        </MenuItem>
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="1"
-                        >
-                          Medium
-                        </MenuItem>
-                        <MenuItem
-                          classes={{
-                            root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
-                          }}
-                          value="2"
-                        >
-                          Large
-                        </MenuItem>
-                      </Select>
-                    </FormControl>
-                  </GridItem>
-                </GridContainer>
-                <GridContainer className={classes.pullRight}>
-                  <Button round color="rose">
-                    Add to Cart &nbsp; <ShoppingCart />
-                  </Button>
-                </GridContainer>
               </GridItem>
             </GridContainer>
           </div>
@@ -506,15 +378,7 @@ export default function ProductPage() {
           <div>
             <div className={classes.left}>
               <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-pricing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
+
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-pricing"
@@ -548,9 +412,9 @@ export default function ProductPage() {
                 target="_blank"
                 className={classes.aClasses}
               >
-                Creative Tim
+                Frank Li
               </a>{" "}
-              for a better web.
+              for a better environment.
             </div>
           </div>
         }

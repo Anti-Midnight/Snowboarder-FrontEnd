@@ -41,7 +41,7 @@ export default function App() {
           <Route path="/login-page" component={LoginPage} />
           <Route path="/pricing" component={PricingPage} />
           <Route path="/profile-page/:id" component={ProfilePage} />
-          <Route path="/product-page" component={ProductPage} />
+          <Route path="/product-page/:id" component={ProductPage} />
           <Route path="/sections" component={SectionsPage} />
           <Route path="/shopping-cart-page" component={ShoppingCartPage} />
           <Route path="/signup-page" component={SignupPage} />

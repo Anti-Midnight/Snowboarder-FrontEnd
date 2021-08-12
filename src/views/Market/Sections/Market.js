@@ -28,17 +28,17 @@ export default function SectionSnowboards(props) {
             <GridItem md={4} sm={4}>
               <Card blog>
                 <CardHeader image>
-                  <a href={"profile-page/" + snowboard._id}>
+                  <a href={"product-page/" + snowboard._id}>
                     {/* const urlRandomGenerator = () => {
                          
 
                     } */}
-                    <img src={snowboard.imgURL} alt="..." />
+                    <img src={snowboard.imgURL[0]} alt="..." />
                   </a>
                   <div
                     className={classes.coloredShadow}
                     style={{
-                      backgroundImage: `url(${snowboard.imgURL})`,
+                      backgroundImage: `url(${snowboard.imgURL[0]})`,
                       opacity: 1,
                     }}
                   />
@@ -53,7 +53,7 @@ export default function SectionSnowboards(props) {
                     {snowboard.name}
                   </h3>
                   <h4 className={classes.cardTitle}>
-                    <a href={"profile-page/" + snowboard._id}>ID</a>
+                    <a href={"product-page/" + snowboard._id}>ID</a>
                   </h4>
                   <p className={classes.cardDescription}>
                     {snowboard.description}
