@@ -32,23 +32,8 @@ export default function SectionPills() {
               {
                 tabButton: "All",
                 tabContent: ""
-              },
-              {
-                tabButton: "World",
-                tabContent: ""
-              },
-              {
-                tabButton: "Arts",
-                tabContent: ""
-              },
-              {
-                tabButton: "Tech",
-                tabContent: ""
-              },
-              {
-                tabButton: "Business",
-                tabContent: ""
               }
+              
             ]}
           />
           <div className={classes.tabSpace} />
