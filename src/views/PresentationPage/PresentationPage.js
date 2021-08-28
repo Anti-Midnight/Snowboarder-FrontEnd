@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Hidden from '@material-ui/core/Hidden';
 // core components
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -54,15 +55,27 @@ export default function PresentationPage() {
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
-              <div className={classes.brand}>
-                <h1>
-                  Designed for All Snowboarders
-                  <span className={classes.proBadge}>PRO</span>
-                </h1>
-                <h3 className={classes.title}>
-                  Wohoo!
-                </h3>
-              </div>
+              <Hidden only={['xs']}>
+                <div className={classes.brand}>
+                  <h1>
+                    Designed for All Snowboarders
+                    <span className={classes.proBadge}>PRO</span>
+                  </h1>
+                  <h3 className={classes.title}>
+                    Wohoo!
+                  </h3>
+                </div>
+              </Hidden>
+              <Hidden only={['sm', 'md', 'lg', 'xl']}>
+                <div className={classes.brand}>
+                  <h2><b>
+                    Designed for All Snowboarders</b>
+                  </h2>
+                  <h4 className={classes.title}>
+                    Wohoo!
+                  </h4>
+                </div>
+              </Hidden>
             </GridItem>
           </GridContainer>
         </div>
@@ -89,7 +102,7 @@ export default function PresentationPage() {
             </div>
             <div className={classes.pullCenter}>
               <List className={classes.list}>
-                
+
                 <ListItem className={classes.inlineBlock}>
                   <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-presentation"
