@@ -4,7 +4,10 @@ import { Router, Route, Switch } from "react-router";
 import { MyProvider } from "Context.js";
 // pages for users
 import AboutUsPage from "views/AboutUsPage/AboutUsPage.js";
-import BlogPostPage from "views/BlogPostPage/BlogPostPage.js";
+import BlogPostPage1 from "views/BlogPostPage1/BlogPostPage.js";
+import BlogPostPage2 from "views/BlogPostPage2/BlogPostPage.js";
+import BlogPostPage3 from "views/BlogPostPage3/BlogPostPage.js";
+
 import BlogPostsPage from "views/BlogPostsPage/BlogPostsPage.js";
 import ComponentsPage from "views/ComponentsPage/ComponentsPage.js";
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
@@ -30,7 +33,9 @@ export default function App() {
       <Router history={hist}>
         <Switch>
           <Route path="/about-us" component={AboutUsPage} />
-          <Route path="/blog-post" component={BlogPostPage} />
+          <Route path="/blog-post/1" component={BlogPostPage1} />
+          <Route path="/blog-post/2" component={BlogPostPage2} />
+          <Route path="/blog-post/3" component={BlogPostPage3} />
           <Route path="/blog-posts" component={BlogPostsPage} />
           <Route path="/components" component={ComponentsPage} />
           <Route path="/contact-us" component={ContactUsPage} />

@@ -18,9 +18,6 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 // sections for this page
 import SectionText from "./Sections/SectionText.js";
-import SectionBlogInfo from "./Sections/SectionBlogInfo.js";
-import SectionComments from "./Sections/SectionComments.js";
-import SectionSimilarStories from "./Sections/SectionSimilarStories.js";
 
 import blogPostPageStyle from "assets/jss/material-kit-pro-react/views/blogPostPageStyle.js";
 
@@ -52,8 +49,7 @@ export default function BlogPostPage() {
                 How We Built the Most Successful Castle Ever
               </h1>
               <h4 className={classes.subtitle}>
-                The last 48 hours of my life were total madness. This is what I
-                did.
+                1
               </h4>
               <br />
               <Button color="rose" size="lg" round>
@@ -66,11 +62,8 @@ export default function BlogPostPage() {
       <div className={classes.main}>
         <div className={classes.container}>
           <SectionText />
-          <SectionBlogInfo />
-          <SectionComments />
         </div>
       </div>
-      <SectionSimilarStories />
       <Footer
         content={
           <div>
