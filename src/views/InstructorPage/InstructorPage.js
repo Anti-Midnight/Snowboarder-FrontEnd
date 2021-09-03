@@ -68,7 +68,7 @@ export default function EcommercePage() {
         fixed
         color="transparent"
         changeColorOnScroll={{
-          height: 300,
+          height: 100,
           color: "info"
         }}
       />
