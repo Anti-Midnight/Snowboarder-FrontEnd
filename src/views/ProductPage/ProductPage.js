@@ -39,10 +39,7 @@ import cardProduct1 from "assets/img/examples/card-product1.jpg";
 import cardProduct3 from "assets/img/examples/card-product3.jpg";
 import cardProduct4 from "assets/img/examples/card-product4.jpg";
 import cardProduct2 from "assets/img/examples/card-product2.jpg";
-import product1 from "assets/img/examples/product1.jpg";
-import product2 from "assets/img/examples/product2.jpg";
-import product3 from "assets/img/examples/product3.jpg";
-import product4 from "assets/img/examples/product4.jpg";
+
 
 const useStyles = makeStyles(productStyle);
 
