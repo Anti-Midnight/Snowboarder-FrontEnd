@@ -50,11 +50,8 @@ export default function SectionSnowboards(props) {
                       classes.textRose
                     )}
                   >
-                    {snowboard.name}
+                    <a href={"product-page/" + snowboard._id}>{snowboard.name}</a>
                   </h3>
-                  <h4 className={classes.cardTitle}>
-                    <a href={"product-page/" + snowboard._id}>ID</a>
-                  </h4>
                   <p className={classes.cardDescription}>
                     {snowboard.description}
                   </p>
